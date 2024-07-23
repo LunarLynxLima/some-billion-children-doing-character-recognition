@@ -1,0 +1,68 @@
+33600, 4200, 4200
+dwtsd'yoscyTraining model of 5 layers with 32 neurons each for 60 epochs 
+[learning rate is 0.0003]
+[Activation Function is Sigmoid]
+[HeInitialization is False]
+
+
+csEpoch [01/60],  Train Loss: 2.3283, Train Accuracy: 12.47%, Val Loss: 2.3637, Val Accuracy: 11.64%, Test Loss: 2.3609, Test Accuracy: 13.10%
+Epoch [02/60],  Train Loss: 2.2971, Train Accuracy: 14.46%, Val Loss: 2.3550, Val Accuracy: 14.07%, Test Loss: 2.3518, Test Accuracy: 15.76%
+Epoch [03/60],  Train Loss: 2.2871, Train Accuracy: 17.53%, Val Loss: 2.3431, Val Accuracy: 19.33%, Test Loss: 2.3394, Test Accuracy: 21.05%
+Epoch [04/60],  Train Loss: 2.2729, Train Accuracy: 21.10%, Val Loss: 2.3253, Val Accuracy: 25.71%, Test Loss: 2.3206, Test Accuracy: 27.86%
+Epoch [05/60],  Train Loss: 2.2502, Train Accuracy: 25.17%, Val Loss: 2.2957, Val Accuracy: 31.81%, Test Loss: 2.2893, Test Accuracy: 33.24%
+Epoch [06/60],  Train Loss: 2.2107, Train Accuracy: 29.08%, Val Loss: 2.2424, Val Accuracy: 36.05%, Test Loss: 2.2326, Test Accuracy: 37.69%
+Epoch [07/60],  Train Loss: 2.1393, Train Accuracy: 32.17%, Val Loss: 2.1489, Val Accuracy: 37.90%, Test Loss: 2.1328, Test Accuracy: 39.40%
+Epoch [08/60],  Train Loss: 2.0281, Train Accuracy: 35.11%, Val Loss: 2.0235, Val Accuracy: 39.67%, Test Loss: 1.9995, Test Accuracy: 41.14%
+Epoch [09/60],  Train Loss: 1.9050, Train Accuracy: 38.56%, Val Loss: 1.9051, Val Accuracy: 41.71%, Test Loss: 1.8758, Test Accuracy: 43.36%
+Epoch [10/60],  Train Loss: 1.7929, Train Accuracy: 42.04%, Val Loss: 1.7941, Val Accuracy: 45.07%, Test Loss: 1.7631, Test Accuracy: 45.90%
+Epoch [11/60],  Train Loss: 1.6778, Train Accuracy: 45.50%, Val Loss: 1.6709, Val Accuracy: 48.55%, Test Loss: 1.6400, Test Accuracy: 48.98%
+Epoch [12/60],  Train Loss: 1.5512, Train Accuracy: 49.11%, Val Loss: 1.5426, Val Accuracy: 51.76%, Test Loss: 1.5122, Test Accuracy: 52.52%
+Epoch [13/60],  Train Loss: 1.4326, Train Accuracy: 52.86%, Val Loss: 1.4333, Val Accuracy: 54.71%, Test Loss: 1.4037, Test Accuracy: 56.12%
+Epoch [14/60],  Train Loss: 1.3361, Train Accuracy: 56.53%, Val Loss: 1.3454, Val Accuracy: 58.12%, Test Loss: 1.3163, Test Accuracy: 59.57%
+Epoch [15/60],  Train Loss: 1.2561, Train Accuracy: 60.06%, Val Loss: 1.2695, Val Accuracy: 61.10%, Test Loss: 1.2404, Test Accuracy: 62.60%
+Epoch [16/60],  Train Loss: 1.1847, Train Accuracy: 63.08%, Val Loss: 1.1997, Val Accuracy: 63.79%, Test Loss: 1.1699, Test Accuracy: 65.26%
+Epoch [17/60],  Train Loss: 1.1181, Train Accuracy: 65.81%, Val Loss: 1.1335, Val Accuracy: 66.43%, Test Loss: 1.1028, Test Accuracy: 67.55%
+Epoch [18/60],  Train Loss: 1.0545, Train Accuracy: 68.34%, Val Loss: 1.0695, Val Accuracy: 69.19%, Test Loss: 1.0378, Test Accuracy: 69.76%
+Epoch [19/60],  Train Loss: 0.9931, Train Accuracy: 70.73%, Val Loss: 1.0072, Val Accuracy: 71.36%, Test Loss: 0.9746, Test Accuracy: 71.90%
+Epoch [20/60],  Train Loss: 0.9341, Train Accuracy: 72.86%, Val Loss: 0.9474, Val Accuracy: 73.48%, Test Loss: 0.9142, Test Accuracy: 73.90%
+Epoch [21/60],  Train Loss: 0.8786, Train Accuracy: 74.74%, Val Loss: 0.8917, Val Accuracy: 75.26%, Test Loss: 0.8579, Test Accuracy: 76.10%
+Epoch [22/60],  Train Loss: 0.8275, Train Accuracy: 76.45%, Val Loss: 0.8410, Val Accuracy: 77.29%, Test Loss: 0.8068, Test Accuracy: 78.07%
+Epoch [23/60],  Train Loss: 0.7812, Train Accuracy: 78.17%, Val Loss: 0.7955, Val Accuracy: 78.98%, Test Loss: 0.7609, Test Accuracy: 79.76%
+Epoch [24/60],  Train Loss: 0.7394, Train Accuracy: 79.66%, Val Loss: 0.7547, Val Accuracy: 80.24%, Test Loss: 0.7197, Test Accuracy: 81.21%
+Epoch [25/60],  Train Loss: 0.7017, Train Accuracy: 80.81%, Val Loss: 0.7181, Val Accuracy: 81.10%, Test Loss: 0.6828, Test Accuracy: 82.07%
+Epoch [26/60],  Train Loss: 0.6675, Train Accuracy: 81.73%, Val Loss: 0.6852, Val Accuracy: 81.79%, Test Loss: 0.6496, Test Accuracy: 83.19%
+Epoch [27/60],  Train Loss: 0.6367, Train Accuracy: 82.60%, Val Loss: 0.6557, Val Accuracy: 82.71%, Test Loss: 0.6199, Test Accuracy: 84.10%
+Epoch [28/60],  Train Loss: 0.6090, Train Accuracy: 83.39%, Val Loss: 0.6293, Val Accuracy: 83.48%, Test Loss: 0.5933, Test Accuracy: 84.64%
+Epoch [29/60],  Train Loss: 0.5841, Train Accuracy: 84.07%, Val Loss: 0.6058, Val Accuracy: 84.21%, Test Loss: 0.5697, Test Accuracy: 85.10%
+Epoch [30/60],  Train Loss: 0.5618, Train Accuracy: 84.61%, Val Loss: 0.5849, Val Accuracy: 84.50%, Test Loss: 0.5487, Test Accuracy: 85.33%
+Epoch [31/60],  Train Loss: 0.5419, Train Accuracy: 85.15%, Val Loss: 0.5663, Val Accuracy: 85.02%, Test Loss: 0.5301, Test Accuracy: 85.62%
+Epoch [32/60],  Train Loss: 0.5241, Train Accuracy: 85.61%, Val Loss: 0.5497, Val Accuracy: 85.38%, Test Loss: 0.5136, Test Accuracy: 86.14%
+Epoch [33/60],  Train Loss: 0.5081, Train Accuracy: 86.06%, Val Loss: 0.5349, Val Accuracy: 85.74%, Test Loss: 0.4989, Test Accuracy: 86.57%
+Epoch [34/60],  Train Loss: 0.4936, Train Accuracy: 86.49%, Val Loss: 0.5217, Val Accuracy: 86.02%, Test Loss: 0.4858, Test Accuracy: 86.90%
+Epoch [35/60],  Train Loss: 0.4805, Train Accuracy: 86.81%, Val Loss: 0.5097, Val Accuracy: 86.52%, Test Loss: 0.4739, Test Accuracy: 87.17%
+Epoch [36/60],  Train Loss: 0.4686, Train Accuracy: 87.11%, Val Loss: 0.4988, Val Accuracy: 86.76%, Test Loss: 0.4631, Test Accuracy: 87.38%
+Epoch [37/60],  Train Loss: 0.4576, Train Accuracy: 87.39%, Val Loss: 0.4889, Val Accuracy: 87.14%, Test Loss: 0.4533, Test Accuracy: 87.71%
+Epoch [38/60],  Train Loss: 0.4474, Train Accuracy: 87.64%, Val Loss: 0.4798, Val Accuracy: 87.33%, Test Loss: 0.4442, Test Accuracy: 87.93%
+Epoch [39/60],  Train Loss: 0.4380, Train Accuracy: 87.85%, Val Loss: 0.4714, Val Accuracy: 87.60%, Test Loss: 0.4359, Test Accuracy: 88.14%
+Epoch [40/60],  Train Loss: 0.4292, Train Accuracy: 88.07%, Val Loss: 0.4636, Val Accuracy: 87.83%, Test Loss: 0.4281, Test Accuracy: 88.36%
+Epoch [41/60],  Train Loss: 0.4209, Train Accuracy: 88.26%, Val Loss: 0.4563, Val Accuracy: 88.02%, Test Loss: 0.4209, Test Accuracy: 88.57%
+Epoch [42/60],  Train Loss: 0.4131, Train Accuracy: 88.46%, Val Loss: 0.4495, Val Accuracy: 88.14%, Test Loss: 0.4141, Test Accuracy: 88.74%
+Epoch [43/60],  Train Loss: 0.4057, Train Accuracy: 88.70%, Val Loss: 0.4431, Val Accuracy: 88.38%, Test Loss: 0.4077, Test Accuracy: 88.93%
+Epoch [44/60],  Train Loss: 0.3987, Train Accuracy: 88.90%, Val Loss: 0.4370, Val Accuracy: 88.43%, Test Loss: 0.4016, Test Accuracy: 88.95%
+Epoch [45/60],  Train Loss: 0.3919, Train Accuracy: 89.11%, Val Loss: 0.4313, Val Accuracy: 88.60%, Test Loss: 0.3959, Test Accuracy: 89.12%
+Epoch [46/60],  Train Loss: 0.3855, Train Accuracy: 89.31%, Val Loss: 0.4258, Val Accuracy: 88.95%, Test Loss: 0.3904, Test Accuracy: 89.24%
+Epoch [47/60],  Train Loss: 0.3794, Train Accuracy: 89.47%, Val Loss: 0.4205, Val Accuracy: 89.02%, Test Loss: 0.3852, Test Accuracy: 89.55%
+Epoch [48/60],  Train Loss: 0.3735, Train Accuracy: 89.58%, Val Loss: 0.4155, Val Accuracy: 89.10%, Test Loss: 0.3802, Test Accuracy: 89.69%
+Epoch [49/60],  Train Loss: 0.3678, Train Accuracy: 89.74%, Val Loss: 0.4107, Val Accuracy: 89.29%, Test Loss: 0.3753, Test Accuracy: 89.76%
+Epoch [50/60],  Train Loss: 0.3623, Train Accuracy: 89.90%, Val Loss: 0.4061, Val Accuracy: 89.38%, Test Loss: 0.3707, Test Accuracy: 89.86%
+Epoch [51/60],  Train Loss: 0.3570, Train Accuracy: 90.05%, Val Loss: 0.4016, Val Accuracy: 89.48%, Test Loss: 0.3662, Test Accuracy: 90.07%
+Epoch [52/60],  Train Loss: 0.3518, Train Accuracy: 90.21%, Val Loss: 0.3972, Val Accuracy: 89.43%, Test Loss: 0.3619, Test Accuracy: 90.17%
+Epoch [53/60],  Train Loss: 0.3468, Train Accuracy: 90.35%, Val Loss: 0.3930, Val Accuracy: 89.57%, Test Loss: 0.3577, Test Accuracy: 90.21%
+Epoch [54/60],  Train Loss: 0.3419, Train Accuracy: 90.49%, Val Loss: 0.3889, Val Accuracy: 89.62%, Test Loss: 0.3536, Test Accuracy: 90.45%
+Epoch [55/60],  Train Loss: 0.3372, Train Accuracy: 90.64%, Val Loss: 0.3850, Val Accuracy: 89.69%, Test Loss: 0.3497, Test Accuracy: 90.55%
+Epoch [56/60],  Train Loss: 0.3326, Train Accuracy: 90.76%, Val Loss: 0.3811, Val Accuracy: 89.71%, Test Loss: 0.3459, Test Accuracy: 90.79%
+Epoch [57/60],  Train Loss: 0.3281, Train Accuracy: 90.89%, Val Loss: 0.3774, Val Accuracy: 89.81%, Test Loss: 0.3422, Test Accuracy: 90.79%
+Epoch [58/60],  Train Loss: 0.3238, Train Accuracy: 91.05%, Val Loss: 0.3737, Val Accuracy: 89.90%, Test Loss: 0.3386, Test Accuracy: 90.83%
+Epoch [59/60],  Train Loss: 0.3195, Train Accuracy: 91.14%, Val Loss: 0.3702, Val Accuracy: 90.02%, Test Loss: 0.3350, Test Accuracy: 90.90%
+Epoch [60/60],  Train Loss: 0.3154, Train Accuracy: 91.26%, Val Loss: 0.3668, Val Accuracy: 90.19%, Test Loss: 0.3316, Test Accuracy: 91.10%
+Total Time taken = 191.55699944496155

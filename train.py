@@ -98,8 +98,8 @@ class CustomDataLoader:
         self.current_idx = 0
 
 # Set the paths for training and testing data
-train_data_path = r"MNIST_DATASET/testSet/trainingSet/trainingSet" #/trainingSet"
-test_data_path = r"/content/MNIST_DATASET/MNIST_DATASET/testSet" #/testSet"
+train_data_path = r"MNIST_DATASET/trainingSet/trainingSet" #/trainingSet"
+test_data_path = r"MNIST_DATASET/testSet"
 
 # Create the MNISTDataset instance with the custom transformation
 custom_transform = CustomTransform()
@@ -122,8 +122,8 @@ test_dataloader = CustomDataLoader(dataset=test_dataset, batch_size=128, shuffle
 
 activation_function = "Sigmoid" # [Sigmoid,ReLU]
 HeInitialization = False
-model = linear.Linear(activation_type=activation_function,HeInitialization=HeInitialization)
-learning_rate = 0.0003
+model = linear.Linear(activation_type=activation_function)
+learning_rate = 0.03
 num_epochs = 60
 
 train_losses, val_losses, test_losses, train_accuracies, val_accuracies, test_accuracies = [], [], [], [], [], []
@@ -145,7 +145,7 @@ for epoch in range(num_epochs):
         y_pred = model.forward(data)
 
         loss = model.compute_loss(y_pred, labels_one_hot)
-        model.backward(data, labels_one_hot, y_pred, learning_rate)
+        model._backward(data, labels_one_hot, y_pred, learning_rate)
 
         train_running_loss += loss
         total_train += labels.size(0)
