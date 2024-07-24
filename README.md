@@ -1,7 +1,7 @@
 # some-billion-children-doing-character-recognition
 (maybe) billion children doing character recognition
 
-Scractch Implementation of neural network with Calculation exposed Calucationto crowd sourced as a part intuition building
+Scractch Implementation of neural network with Calculation exposed to crowd sourced as a part intuition building.
 
 0.0) nXn grid (3X3 grid) giving the data and very small nn on it.
 
