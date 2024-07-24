@@ -1,5 +1,4 @@
 import os
-import math
 import time
 import linear
 import numpy as np
@@ -10,24 +9,19 @@ import torch.nn as nn
 import torch.optim as optim
 import torch.nn.functional as F
 from torch.utils.data import random_split
-import matplotlib.pyplot as plt
-from torchvision import transforms
-from torch.utils.data import Dataset, DataLoader
 
 class CustomTransform:
-    def __init__(self, target_size=(28, 28)):
+    def __init__(self, target_size=(28, 28), resize = False, normalize = True):
         self.target_size = target_size
+        self.resize = resize
+        self.normalize = normalize
 
-    def __call__(self, img):
-        # Resize
-        # img = img.resize(self.target_size, Image.ANTIALIAS)
-        # Convert to NumPy array and normalize
-        img_array = np.array(img, dtype=np.float32) / 255.0
-        # Convert to PyTorch tensor
-        img_tensor = torch.from_numpy(img_array)
+    def __call__(self, img,):
+        if self.resize : img = img.resize(self.target_size, Image.ANTIALIAS)
+        if self.normalize : img_array = np.array(img, dtype=np.float32) / 255.0      # Convert to NumPy array and normalize
+        return torch.from_numpy(img_array)                                          # Convert to PyTorch tensor
 
-        return img_tensor
-class MNISTDataset(Dataset):
+class MNISTDataset():
     def __init__(self, root, transform=None):
         self.root = root
         self.transform = transform
@@ -42,15 +36,12 @@ class MNISTDataset(Dataset):
                 else:
                     self.data.append((img_path,-1))
 
-    def __len__(self):
-        return len(self.data)
+    def __len__(self): return len(self.data)
 
     def __getitem__(self, idx):
         img_path, label = self.data[idx]
-        # img = Image.open(img_path)
         img = Image.open(img_path).convert('L')  # Convert to grayscale
-        if self.transform:
-            img = self.transform(img)
+        if self.transform: img = self.transform(img)
         label = torch.tensor(label, dtype=torch.long)   # [label]
         return img, label
 class CustomDataLoader:
@@ -120,11 +111,10 @@ train_dataloader = CustomDataLoader(dataset=train_dataset, batch_size=128, shuff
 val_dataloader = CustomDataLoader(dataset=val_dataset, batch_size=128, shuffle=False)
 test_dataloader = CustomDataLoader(dataset=test_dataset, batch_size=128, shuffle=False)
 
-activation_function = "Sigmoid" # [Sigmoid,ReLU]
-HeInitialization = False
-model = linear.Linear(activation_type=activation_function)
-learning_rate = 0.03
-num_epochs = 60
+num_epochs = 5
+learning_rate = 0.0003
+activation_function = "ReLU" # [Sigmoid,ReLU]
+model = linear.Linear(inputs = 784, hidden = [32,32,] , outputs = 10 ,activation_type = activation_function, initialization_type = "He")
 
 train_losses, val_losses, test_losses, train_accuracies, val_accuracies, test_accuracies = [], [], [], [], [], []
 
@@ -145,7 +135,7 @@ for epoch in range(num_epochs):
         y_pred = model.forward(data)
 
         loss = model.compute_loss(y_pred, labels_one_hot)
-        model._backward(data, labels_one_hot, y_pred, learning_rate)
+        model.backward(data, labels_one_hot, y_pred, learning_rate)
 
         train_running_loss += loss
         total_train += labels.size(0)
