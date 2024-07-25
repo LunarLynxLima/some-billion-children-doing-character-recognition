@@ -1,6 +1,7 @@
 import os
 import time
 import linear
+import operations
 import numpy as np
 from PIL import Image
 
@@ -21,7 +22,7 @@ class CustomTransform:
         if self.normalize : img_array = np.array(img, dtype=np.float32) / 255.0      # Convert to NumPy array and normalize
         return torch.from_numpy(img_array)                                          # Convert to PyTorch tensor
 
-class MNISTDataset():
+class MNISTDataset:
     def __init__(self, root, transform=None):
         self.root = root
         self.transform = transform
@@ -41,6 +42,7 @@ class MNISTDataset():
     def __getitem__(self, idx):
         img_path, label = self.data[idx]
         img = Image.open(img_path).convert('L')  # Convert to grayscale
+
         if self.transform: img = self.transform(img)
         label = torch.tensor(label, dtype=torch.long)   # [label]
         return img, label
@@ -63,8 +65,7 @@ class CustomDataLoader:
         return self
 
     def __next__(self):
-        if self.batch_start_idx >= len(self.idx_list):
-            raise StopIteration
+        if self.batch_start_idx >= len(self.idx_list): raise StopIteration
 
         batch_end_index = min(self.batch_start_idx + self.batch_size, len(self.dataset))
         batch_indices = self.idx_list[self.batch_start_idx:batch_end_index]
@@ -80,7 +81,6 @@ class CustomDataLoader:
 
         # self.current_idx += self.batch_size
         self.batch_start_idx = batch_end_index
-
         return data_tensor, label_tensor
 
     def shuffle_dataset(self):
@@ -88,9 +88,12 @@ class CustomDataLoader:
         self.dataset = [self.dataset[i] for i in indices]
         self.current_idx = 0
 
-# Set the paths for training and testing data
+# Set the paths for training and testing data folders
 train_data_path = r"MNIST_DATASET/trainingSet/trainingSet" #/trainingSet"
 test_data_path = r"MNIST_DATASET/testSet"
+
+train_data_path = r"/media/D/Lakshay/IIITD/extra/some-billion-children-doing-character-recognition/MNIST_DATASET/trainingSet/trainingSet" #/trainingSet"
+test_data_path = r"/media/D/Lakshay/IIITD/extra/some-billion-children-doing-character-recognition/MNIST_DATASET/testSet"
 
 # Create the MNISTDataset instance with the custom transformation
 custom_transform = CustomTransform()
@@ -107,18 +110,21 @@ train_dataset, val_dataset, test_dataset = random_split(train_dataset, [train_si
 print(f"{len(train_dataset)}, {len(val_dataset)}, {len(test_dataset)}")
 
 # Create custom data loaders for training, validation, and testing
-train_dataloader = CustomDataLoader(dataset=train_dataset, batch_size=128, shuffle=True)
+train_dataloader = CustomDataLoader(dataset=train_dataset, batch_size=128, shuffle=False)
 val_dataloader = CustomDataLoader(dataset=val_dataset, batch_size=128, shuffle=False)
 test_dataloader = CustomDataLoader(dataset=test_dataset, batch_size=128, shuffle=False)
 
-num_epochs = 5
+num_epochs = 1
 learning_rate = 0.0003
+initialization_type = "He" # [He,Xavier]
 activation_function = "ReLU" # [Sigmoid,ReLU]
-model = linear.Linear(inputs = 784, hidden = [32,32,] , outputs = 10 ,activation_type = activation_function, initialization_type = "He")
+inputs, hidden, outputs = 784, [32], 10
+model = linear.Linear(activation_type = activation_function, initialization_type = initialization_type)
 
 train_losses, val_losses, test_losses, train_accuracies, val_accuracies, test_accuracies = [], [], [], [], [], []
 
-print(f"Training model of 5 layers with 32 neurons each for {num_epochs} epochs \n[learning rate is {learning_rate}]\n[Activation Function is {activation_function}]\n[HeInitialization is {HeInitialization}]\n")
+print(f"Training model of {len(hidden)+1} layers with input neurons = {inputs}, hidden layers neurons = {hidden}, output layer = {outputs}, for {num_epochs} epochs",
+      f"\n[learning rate is {learning_rate}]\n[Activation Function is {activation_function}]\n[wandb Initialization type is {initialization_type}]\n")
 
 starting_time_scratch = time.time()
 for epoch in range(num_epochs):
@@ -147,7 +153,6 @@ for epoch in range(num_epochs):
 
     # Validation
     val_running_loss, correct_val, total_val = 0.0, 0, 0
-
     with torch.no_grad():
         for data, labels in val_dataloader:
             data = data.view(-1, 784)
